@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-chai-ivory: #F5F0E7;
+  --color-chai-espresso: #302019;
+  --color-chai-beige: #E6D5BD;
+  --color-chai-caramel: #B87543;
+  --color-chai-dark: #241711;
+  --color-chai-cream: #FAF6EE;
+  --color-chai-amber: #8A4016;
+  --color-chai-terracotta: #C86D3B;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F0E7;
+  color: #302019;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+}
+
+.font-serif {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+.font-sans {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Steam animation */
+@keyframes steam-rise {
+  0% {
+    transform: translateY(0) scaleX(0.8) scaleY(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  60% {
+    transform: translateY(-40px) scaleX(1.3) scaleY(1.2) rotate(4deg);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-80px) scaleX(1.8) scaleY(1.5) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+.animate-steam-1 {
+  animation: steam-rise 3.8s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steam-rise 4.4s ease-out 1.2s infinite;
+}
+
+.animate-steam-3 {
+  animation: steam-rise 3.4s ease-out 2.1s infinite;
+}
+
+/* Subtle boiling bubble oscillation */
+@keyframes simmer-bubble {
+  0%, 100% {
+    transform: scale(0.85) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.15) translateY(-4px);
+    opacity: 0.85;
+  }
+}
+
+.animate-simmer {
+  animation: simmer-bubble 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Gentle float */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: gentle-float 7s ease-in-out 2s infinite;
+}
+
+/* Scroll indicator bounce */
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Milk swirl rotation */
+@keyframes swirl-slow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-swirl {
+  animation: swirl-slow 18s linear infinite;
+}
+
+/* Hide scrollbar for clean editorial look */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Lenis smooth scrolling styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Fluid milk stream flow keyframes */
+@keyframes milk-flow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    stroke-dashoffset: -120;
+    opacity: 0.95;
+  }
+}
+
+.animate-milk-flow {
+  animation: milk-flow 1.4s linear infinite;
+}
+
+/* Ripple wave expansion at pour contact point */
+@keyframes ripple-pulse {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.animate-pour-ripple-1 {
+  animation: ripple-pulse 2.2s cubic-bezier(0.1, 0.4, 0.2, 1) infinite;
+}
+
+.animate-pour-ripple-2 {
+  animation: ripple-pulse 2.2s cubic-bezier(0.1, 0.4, 0.2, 1) 0.75s infinite;
+}
+
+.animate-pour-ripple-3 {
+  animation: ripple-pulse 2.2s cubic-bezier(0.1, 0.4, 0.2, 1) 1.5s infinite;
+}
+
+/* Convection cloud plume marbling pulse */
+@keyframes marbling-plume {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.18) rotate(12deg);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.3) rotate(24deg);
+    opacity: 0.35;
+  }
+}
+
+.animate-marbling {
+  animation: marbling-plume 7s ease-in-out infinite alternate;
+}
